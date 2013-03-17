@@ -7,7 +7,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 gem 'jquery-rails'
-gem 'slim'
+gem 'haml-rails'
 group :test, :development do
   gem 'rspec-rails'
   gem 'factory_girl'
