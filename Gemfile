@@ -21,3 +21,6 @@ group :test do
   gem 'capybara-webkit'
   gem 'simplecov'
 end
+
+#IE CSS Compliance
+gem 'pie-rails'

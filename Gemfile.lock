@@ -93,6 +93,7 @@ GEM
     netrc (0.7.7)
     nokogiri (1.5.6)
     pg (0.14.1)
+    pie-rails (1.1.0)
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)
@@ -180,6 +181,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   pg
+  pie-rails
   rails (= 3.2.12)
   rspec-rails
   sass-rails (~> 3.2.3)

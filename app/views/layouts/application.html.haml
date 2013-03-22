@@ -1,0 +1,273 @@
+!!!
+/[if lt IE 7]
+  <html class="no-js lt-ie7" lang="en">
+/[if IE 7]
+  <html class="no-js lt-ie8 lt-ie7" lang="en">
+/[if IE 8]
+  <html class="no-js lt-ie9" lang="en">
+/[if gte IE 9]
+  %html.no-js{:lang => "en"}
+%head
+  %title= "Andrew and Shayna are getting married!!!"
+  %meta(charset="utf-8")
+  %meta(name="viewport" content="width=device-width")
+  /[if lt IE 9]
+    = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
+  = stylesheet_link_tag "application", :media => "all"
+  = javascript_include_tag "application"
+  %script{:src => "//use.typekit.net/uri1xds.js", :type => "text/javascript"}
+  :javascript
+    try{Typekit.load();}catch(e){}
+  %link{:href => "http://fonts.googleapis.com/css?family=Copse|Clicker+Script", :rel => "stylesheet", :type => "text/css"}
+  = csrf_meta_tags
+  = favicon_link_tag
+
+%body
+  .loader
+    .spinner
+      = image_tag '/assets/loader.gif'
+      %p Loading
+
+  .wrapper
+    %nav
+      = link_to 'Welcome', '#', :class => 'nav-welcome'
+      = link_to 'Our Story', '#', :class => 'nav-story'
+      = link_to 'When & Where', '#', :class => 'nav-location'
+      = link_to 'Party', '#', :class => 'nav-party'
+      = link_to 'Hotels', '#', :class => 'nav-hotels'
+      = link_to 'Gifts', '#', :class => 'nav-gifts'
+      = link_to 'RSVP', '#', :class => 'nav-rsvp'
+      
+    .frame
+      .stars-small{"data-9000" => "background-position:0px 0px;", "data-15400" => "background-position: 0px 2200px ;"}
+      .stars-large{"data-9000" => "background-position:0px 0px;", "data-15400" => "background-position: 0px 2700px ;"}
+      .moon{"data-11250" => "top:-20%;", "data-13000" => "top: 120%;"}
+
+      .registry{"data-12800" => "top:-100%;", "data-13800" => "top: 100%;"}
+        %h1 We’re registered at the following
+        = link_to image_tag("/assets/bed-bath.png"), 'http://www.bedbathandbeyond.com/regGiftRegistry.asp?wrn=-683516206&', :target => '_blank'
+        = link_to image_tag("/assets/pottery-barn.png"), 'http://www.potterybarn.com/registry/3127937/registry-list.html', :target => '_blank'
+        = link_to image_tag("/assets/crateandbarrel.png"), 'http://www.crateandbarrel.com/Gift-Registry/Shayna-Kagan-and-Andrew-Reifman/r4945559', :target => '_blank'
+
+      .rsvp{"data-14600" => "top:-100%;", "data-15400" => "top: 9%;"}
+        %h1 Please RSVP whether or not you are attending
+        %form{:action => ''}
+          %fieldset{:class => 'radio'}
+            %label{:for => 'yes'}
+              %input{:type => 'radio', :id => 'yes', :name => 'attending', :checked => 'checked'}
+              YES, see you at the party!
+            %label{:for => 'no'}
+              %input{:type => 'radio', :id => 'no', :name => 'attending'}
+              NO, we will be there in spirit
+          %fieldset
+            %label{:for => 'number'} Number of guests attending
+            %input{:type => 'text', :id => 'number', :name => 'number'}
+          %fieldset
+            %label{:for => 'names'} Name(s) of guest(s)
+            %input{:type => 'text', :id => 'names', :name => 'names'}
+          %fieldset
+            %input{:type => 'submit', :value => 'Send RSVP'}
+          %p 
+            For any questions, email us at 
+            = mail_to 'andrewr23@gmail.com'
+
+      .sky-trees{"data-0" => "background-position:0px 0px;", "data-9000" => "background-position:-4000px 0px;", "data-9500" => 'top:0%;', "data-11200" => 'top:100%;'}
+      .trees-midground{"data-0" => "background-position:0px 0px;", "data-9000" => "background-position:-5000px 0px", "data-9500" => 'top:0%;', "data-11200" => 'top:100%;'}
+
+      = image_tag "/assets/chandelier-3.png", :class => 'chandelier', "data-0" => "right:-100%;", "data-6600" => "right:-100%; margin-right:-92px;", "data-9000" => "right:30%;", "data-9500" => 'top:-100px;', "data-11200" => 'top:700px;'
+
+      .leaves-midground{"data-0" => "background-position:0px 0px;", "data-9000" => "background-position:-5500px 0px", "data-9500" => 'top:-140px;', "data-11200" => 'top:700px;'}
+
+      .arrow{"data-0" => "right:0%;", "data-1600" => "right:100%;"}
+        .arrow-inner
+          = image_tag "/assets/firefly3.png", :class => 'firefly-1'
+          = image_tag "/assets/firefly3.png", :class => 'firefly-2'
+          = image_tag "/assets/firefly3.png", :class => 'firefly-3'
+          = image_tag "/assets/firefly3.png", :class => 'firefly-4'
+          = image_tag "/assets/firefly3.png", :class => 'firefly-5'
+          = image_tag "/assets/firefly3.png", :class => 'firefly-6'
+          = image_tag "/assets/firefly3.png", :class => 'firefly-7'
+          = image_tag "/assets/firefly3.png", :class => 'firefly-8'
+          = image_tag "/assets/firefly3.png", :class => 'firefly-9'
+          = image_tag "/assets/firefly2.png", :class => 'firefly-10'
+          = image_tag "/assets/firefly2.png", :class => 'firefly-11'
+          = image_tag "/assets/firefly2.png", :class => 'firefly-12'
+          = image_tag "/assets/firefly2.png", :class => 'firefly-13'
+          = image_tag "/assets/firefly2.png", :class => 'firefly-14'
+          = image_tag "/assets/firefly2.png", :class => 'firefly-15'
+          = image_tag "/assets/firefly2.png", :class => 'firefly-16'
+          = image_tag "/assets/firefly2.png", :class => 'firefly-17'
+          = image_tag "/assets/firefly2.png", :class => 'firefly-18'
+          = image_tag "/assets/firefly2.png", :class => 'firefly-19'
+          = image_tag "/assets/firefly2.png", :class => 'firefly-20'
+          = image_tag "/assets/firefly2.png", :class => 'firefly-21'
+          = image_tag "/assets/firefly2.png", :class => 'firefly-22'
+          = image_tag "/assets/firefly2.png", :class => 'firefly-23'
+          = image_tag "/assets/firefly2.png", :class => 'firefly-24'
+          = image_tag "/assets/firefly2.png", :class => 'firefly-25'
+          = image_tag "/assets/firefly2.png", :class => 'firefly-26'
+
+      = link_to '', '#', :class => 'to-welcome', "data-0" => "right:17%;", "data-1325" => "right:100%;"
+
+      = image_tag "/assets/welcome.png", :class => 'welcome', "data-0" => "right:-80%;", "data-1200" => "right:-80%;", "data-4400" => "right:122%;"
+
+      .fireflies{"data-0" => "left:90%;", "data-9000" => "left:-400%;", "data-9500" => "top:0%;", "data-11100" => "top: 50%;", "data-11200" => "z-index:100;", "data-11300" => "z-index:1000;", "data-12900" => "top: 100%;"}
+
+      .bushes{"data-0" => "background-position:0px bottom;", "data-9000" => "background-position:-8000px bottom", "data-9500" => 'top:0%;', "data-11250" => 'top:100%;'}
+
+      = image_tag "/assets/tree-lg-1.png", "data-0" => "right:75%;", "data-400" => "right:100%;"
+      = image_tag "/assets/tree-lg-3.png", "data-0" => "right:-2%;", "data-1000" => "right:100%;"
+      = image_tag "/assets/tree-lg-2.png", "data-900" => "right:-20%;", "data-2000" => "right:100%;"
+      = image_tag "/assets/tree-lg-2.png", "data-1100" => "right:-20%;", "data-2600" => "right:100%;"
+      = image_tag "/assets/tree-lg-3.png", "data-2100" => "right:-20%;", "data-3400" => "right:100%;"
+      = image_tag "/assets/tree-lg-1.png", "data-3000" => "right:-20%;", "data-4200" => "right:100%;"
+      = image_tag "/assets/tree-lg-3.png", "data-3800" => "right:-20%;", "data-5200" => "right:100%;"
+      = image_tag "/assets/tree-lg-2.png", "data-4800" => "right:-20%;", "data-6400" => "right:100%;"
+      = image_tag "/assets/tree-lg-1.png", "data-5600" => "right:-20%;", "data-7000" => "right:100%;"
+      = image_tag "/assets/tree-lg-2.png", "data-6500" => "right:-20%;", "data-8100" => "right:100%;"
+      = image_tag "/assets/tree-lg-3.png", "data-7200" => "right:-20%;", "data-8400" => "right:100%;"
+      = image_tag "/assets/tree-lg-3.png", "data-7800" => "right:-20%;", "data-9000" => "right:70%;", "data-9500" => 'top:0%;', "data-11200" => 'top:100%;'
+      = image_tag "/assets/tree-lg-3.png", "data-8800" => "right:-20%;", "data-9000" => "right:5%;", "data-9500" => 'top:0%;', "data-11200" => 'top:100%;'
+
+      = image_tag "/assets/sign-2.png", :class => 'sign', "data-0" => "right:-100%;", "data-5650" => "right:-100%;", "data-7690" => "right:100%;"
+      = image_tag "/assets/sign-1.png", :class => 'sign', "data-0" => "right:-100%;", "data-5500" => "right:-100%;", "data-7300" => "right:100%;"
+      = image_tag "/assets/sign-3.png", :class => 'sign', "data-0" => "right:-100%;", "data-5700" => "right:-100%;", "data-7300" => "right:100%;"
+
+      = image_tag "/assets/chandelier-2.png", :class => 'chandelier', "data-0" => "right:-100%;", "data-7000" => "right:-100%; margin-right:-130px;", "data-9000" => "right:70%;", "data-9500" => 'top:-100px;', "data-11300" => 'top:700px;'
+
+      .leaves-foreground{"data-0" => "background-position:0px 0px;", "data-9000" => "background-position:-7000px 0px", "data-9500" => 'top:-280px', "data-11100" => 'top:700px;'}
+
+      .fireflies-large
+        = image_tag "/assets/firefly4.png", "data-0" => "right:-100%; top:30%;", "data-1000" => "right:100%;"
+        = image_tag "/assets/firefly4.png", "data-400" => "right:-100%; top:60%;", "data-1400" => "right:100%;"
+        = image_tag "/assets/firefly4.png", "data-700" => "right:-100%; top:50%;", "data-1700" => "right:100%;"
+        = image_tag "/assets/firefly4.png", "data-850" => "right:-100%; top:65%;", "data-1850" => "right:100%;"
+        = image_tag "/assets/firefly4.png", "data-1100" => "right:-100%; top:35%;", "data-2100" => "right:100%;"
+        = image_tag "/assets/firefly4.png", "data-1800" => "right:-100%; top:60%;", "data-2800" => "right:100%;"
+        = image_tag "/assets/firefly4.png", "data-2800" => "right:-100%; top:20%;", "data-3800" => "right:100%;"
+        = image_tag "/assets/firefly4.png", "data-3000" => "right:-100%; top:40%;", "data-4000" => "right:100%;"
+        = image_tag "/assets/firefly4.png", "data-3400" => "right:-100%; top:30%;", "data-4400" => "right:100%;"
+        = image_tag "/assets/firefly4.png", "data-3800" => "right:-100%; top:60%;", "data-4800" => "right:100%;"
+        = image_tag "/assets/firefly4.png", "data-4400" => "right:-100%; top:55%;", "data-5400" => "right:100%;"
+        = image_tag "/assets/firefly4.png", "data-4600" => "right:-100%; top:20%;", "data-5600" => "right:100%;"
+        = image_tag "/assets/firefly4.png", "data-5100" => "right:-100%; top:35%;", "data-6100" => "right:100%;"
+        = image_tag "/assets/firefly4.png", "data-5800" => "right:-100%; top:60%;", "data-6800" => "right:100%;"
+        = image_tag "/assets/firefly4.png", "data-6000" => "right:-100%; top:30%;", "data-7000" => "right:100%;"
+        = image_tag "/assets/firefly4.png", "data-6300" => "right:-100%; top:35%;", "data-7300" => "right:100%;"
+        = image_tag "/assets/firefly4.png", "data-6500" => "right:-100%; top:45%;", "data-7500" => "right:100%;"
+        = image_tag "/assets/firefly4.png", "data-7000" => "right:-100%; top:20%;", "data-8000" => "right:100%;"
+        = image_tag "/assets/firefly4.png", "data-7100" => "right:-100%; top:60%;", "data-8100" => "right:100%;"
+        = image_tag "/assets/firefly4.png", "data-7500" => "right:-100%; top:45%;", "data-8500" => "right:100%;"
+
+      .story{"data-0" => "right:-100%;", "data-4000" => "right:-90%;", "data-5600" => "right:140%;"}
+        .story-inner
+          .paper
+            .text
+              %p 
+                %span L
+                orem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.
+
+              %p Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.
+
+              %p Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl.
+
+              %p Suspendisse mauris. Fusce accumsan mollis eros. Pellentesque a diam sit amet mi ullamcorper vehicula. Integer adipiscing risus a sem. Nullam quis massa sit amet nibh viverra malesuada. Nunc sem lacus, accumsan quis, faucibus non, congue vel, arcu. Ut scelerisque hendrerit tellus. Integer sagittis. Vivamus a mauris eget arcu gravida tristique. Nunc iaculis mi in ante. Vivamus imperdiet nibh feugiat est.
+
+              %p Ut convallis, sem sit amet interdum consectetuer, odio augue aliquam leo, nec dapibus tortor nibh sed augue. Integer eu magna sit amet metus fermentum posuere. Morbi sit amet nulla sed dolor elementum imperdiet. Quisque fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque adipiscing eros ut libero. Ut condimentum mi vel tellus. Suspendisse laoreet. Fusce ut est sed dolor gravida convallis. Morbi vitae ante. Vivamus ultrices luctus nunc. Suspendisse et dolor. Etiam dignissim. Proin malesuada adipiscing lacus. Donec metus. Curabitur gravida.
+
+              %p Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl.
+
+              %p Suspendisse mauris. Fusce accumsan mollis eros. Pellentesque a diam sit amet mi ullamcorper vehicula. Integer adipiscing risus a sem. Nullam quis massa sit amet nibh viverra malesuada. Nunc sem lacus, accumsan quis, faucibus non, congue vel, arcu. Ut scelerisque hendrerit tellus. Integer sagittis. Vivamus a mauris eget arcu gravida tristique. Nunc iaculis mi in ante. Vivamus imperdiet nibh feugiat est.
+
+              %p Ut convallis, sem sit amet interdum consectetuer, odio augue aliquam leo, nec dapibus tortor nibh sed augue. Integer eu magna sit amet metus fermentum posuere. Morbi sit amet nulla sed dolor elementum imperdiet. Quisque fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque adipiscing eros ut libero. Ut condimentum mi vel tellus. Suspendisse laoreet. Fusce ut est sed dolor gravida convallis. Morbi vitae ante. Vivamus ultrices luctus nunc. Suspendisse et dolor. Etiam dignissim. Proin malesuada adipiscing lacus. Donec metus. Curabitur gravida.
+
+      .chandelier-1{"data-0" => "right:-100%;", "data-7600" => "right:-100%; margin-right:-162px;", "data-9000" => "right:50%;", "data-9500" => 'top:-100px;', "data-11400" => 'top:700px;'}
+
+      .chandelier-fireflies{"data-0" => "right:-120%;", "data-7590" => "right:-120%;", "data-9000" => "right:0%;", "data-9500" => 'top:0%;', "data-10900" => 'top:100%;'}
+        = image_tag "/assets/firefly1.png", :class => 'firefly-1'
+        = image_tag "/assets/firefly1.png", :class => 'firefly-2'
+        = image_tag "/assets/firefly1.png", :class => 'firefly-3'
+        = image_tag "/assets/firefly1.png", :class => 'firefly-4'
+        = image_tag "/assets/firefly2.png", :class => 'firefly-5'
+        = image_tag "/assets/firefly2.png", :class => 'firefly-6'
+        = image_tag "/assets/firefly2.png", :class => 'firefly-7'
+        = image_tag "/assets/firefly2.png", :class => 'firefly-8'
+        = image_tag "/assets/firefly3.png", :class => 'firefly-9'
+        = image_tag "/assets/firefly3.png", :class => 'firefly-10'
+        = image_tag "/assets/firefly3.png", :class => 'firefly-11'
+        = image_tag "/assets/firefly3.png", :class => 'firefly-12'
+
+      = image_tag "/assets/tree-blurry.png", "data-800" => "right:-100%;", "data-1800" => "right:100%;"
+      = image_tag "/assets/tree-blurry.png", "data-5500" => "right:-100%;", "data-6500" => "right:100%;"
+
+      = link_to 'Get directions', 'http://goo.gl/maps/i7Stc', :target => '_blank', :class => 'get-directions', "data-0" => "right:-100%;", "data-5585" => "right:-100%;", "data-7585" => "right:100%;"
+
+      .hotel{"data-9900" => "top:-100%;", "data-11680" => "top: 100%;"}
+        .hotel-fireflies
+          = image_tag "/assets/firefly1.png"
+          = image_tag "/assets/firefly1.png"
+          = image_tag "/assets/firefly1.png"
+          = image_tag "/assets/firefly1.png"
+          = image_tag "/assets/firefly1.png"
+          = image_tag "/assets/firefly2.png"
+          = image_tag "/assets/firefly2.png"
+          = image_tag "/assets/firefly2.png"
+          = image_tag "/assets/firefly2.png"
+          = image_tag "/assets/firefly2.png"
+          = image_tag "/assets/firefly3.png"
+          = image_tag "/assets/firefly3.png"
+          = image_tag "/assets/firefly3.png"
+
+        %h1 Hotel Information
+        %p 
+          For our out of town guests, or anyone who wants to stay near the venue before and/or after the wedding, we have special rates at the 
+          = link_to("Twelve Hotel in Atlantic Station", "http://www.twelvehotels.com", :target => '_blank') << '.'
+          The hotel is located only 4 minutes from Summerour Studio. To use the special rate at the Twelve, enter “SHAG” in the group code field when booking a room.
+
+        %p 
+          We also have rooms blocked off at the 
+          = link_to 'Atlanta Marriott Suites Midtown', 'http://www.marriott.com/hotels/travel/atlms-atlanta-marriott-suites-midtown/', :target => '_blank'
+          , also located very close to the venue (only 7 minutes driving). You can make reservations using this 
+          = link_to 'link', 'http://www.marriott.com/hotels/travel/atlms-atlanta-marriott-suites-midtown/?toDate=6/16/13&groupCode=KAGKAGA&stop_mobi=yes&fromDate=6/13/13&app=resvlink', :target => '_blank'
+          , or you can call Marriott Reservations at 800-228-9290 and ask for the Kagan Wedding Room Block.
+
+      .canopy3{"data-9400" => "top:-100%;", "data-11030" => "top: 100%;"}
+
+      .canopy6{"data-10260" => "top:-100%;", "data-12100" => "top: 100%;"}
+      .canopy5{"data-10400" => "top:-100%;", "data-11800" => "top: 100%;"}
+      .canopy4{"data-10440" => "top:-100%;", "data-11550" => "top: 100%;"}
+  
+  :javascript
+    var s = skrollr.init();
+
+    $(window).load(function(){
+      $(".text").mCustomScrollbar({
+        scrollInertia: 500
+      });
+    });
+
+    $(document).ready(function() {
+      $.firefly({
+        images : ['/assets/firefly1.png','/assets/firefly2.png','/assets/firefly3.png'],
+        total : 40
+      });
+    });
+
+    if (window.addEventListener) window.addEventListener('DOMMouseScroll', wheel, false);
+    window.onmousewheel = document.onmousewheel = wheel;
+
+    function wheel(event) {
+      var delta = 0;
+      if (event.wheelDelta) delta = event.wheelDelta / 120;
+      else if (event.detail) delta = -event.detail / 3;
+
+      handle(delta);
+      if (event.preventDefault) event.preventDefault();
+      event.returnValue = false;
+    }
+
+    function handle(delta) {
+      var distance = 10;
+        $('html, body').scrollTop($(window).scrollTop() - (distance * delta));
+    }
+
