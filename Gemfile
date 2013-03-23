@@ -24,3 +24,6 @@ end
 
 #IE CSS Compliance
 gem 'pie-rails'
+
+#IE Pseudoclass Compliance
+gem 'selectivizr-rails'

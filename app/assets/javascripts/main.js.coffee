@@ -43,25 +43,25 @@ $ ->
     ), 500
 
   $('.nav-welcome, .to-welcome').click ->
-    $('html,body').animate({scrollTop: 3200}, 2000)
+    $('html,body').animate({scrollTop: 3200}, 2600)
     return false
   $('.nav-story').click ->
-    $('html,body').animate({scrollTop: 4980}, 2000)
+    $('html,body').animate({scrollTop: 4980}, 2600)
     return false
   $('.nav-location').click ->
-    $('html,body').animate({scrollTop: 6840}, 2000)
+    $('html,body').animate({scrollTop: 6840}, 2600)
     return false
   $('.nav-party').click ->
-    $('html,body').animate({scrollTop: 9000}, 2000)
+    $('html,body').animate({scrollTop: 9000}, 2600)
     return false
   $('.nav-hotels').click ->
-    $('html,body').animate({scrollTop: 10820}, 2000)
+    $('html,body').animate({scrollTop: 10820}, 2600)
     return false
   $('.nav-gifts').click ->
-    $('html,body').animate({scrollTop: 13380}, 2000)
+    $('html,body').animate({scrollTop: 13380}, 2600)
     return false
   $('.nav-rsvp').click ->
-    $('html,body').animate({scrollTop: 15400}, 2000)
+    $('html,body').animate({scrollTop: 15400}, 2600)
     return false
 
 
