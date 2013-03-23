@@ -8,6 +8,7 @@ group :assets do
 end
 gem 'jquery-rails'
 gem 'haml-rails'
+gem 'simple_form'
 group :test, :development do
   gem 'rspec-rails'
   gem 'factory_girl'

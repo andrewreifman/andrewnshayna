@@ -37,7 +37,7 @@
       = link_to 'Hotels', '#', :class => 'nav-hotels'
       = link_to 'Gifts', '#', :class => 'nav-gifts'
       = link_to 'RSVP', '#', :class => 'nav-rsvp'
-      
+
     .frame
       .stars-small{"data-9000" => "background-position:0px 0px;", "data-15400" => "background-position: 0px 2200px ;"}
       .stars-large{"data-9000" => "background-position:0px 0px;", "data-15400" => "background-position: 0px 2700px ;"}
@@ -51,24 +51,22 @@
 
       .rsvp{"data-14600" => "top:-100%;", "data-15400" => "top: 9%;"}
         %h1 Please RSVP whether or not you are attending
-        %form{:action => ''}
-          %fieldset{:class => 'radio'}
-            %label{:for => 'yes'}
-              %input{:type => 'radio', :id => 'yes', :name => 'attending', :checked => 'checked'}
+        = simple_form_for Guest.new, remote: true do |f|
+          %fieldset.radio
+            %label{:for => 'guest_attending_true'}
+              %input{:type => 'radio', :id => 'guest_attending_true', :name => 'guest[attending]', :checked => 'checked'}
               %span YES, see you at the party!
-            %label{:for => 'no'}
-              %input{:type => 'radio', :id => 'no', :name => 'attending'}
+            %label{:for => 'guest_attending_false'}
+              %input{:type => 'radio', :id => 'guest_attending_false', :name => 'guest[attending]'}
               %span NO, we will be there in spirit
           %fieldset
-            %label{:for => 'number'} Number of guests attending
-            %input{:type => 'text', :id => 'number', :name => 'number'}
+            = f.input :guests, label: 'Number of guests attending', as: :string, required: false
           %fieldset
-            %label{:for => 'names'} Name(s) of guest(s)
-            %input{:type => 'text', :id => 'names', :name => 'names'}
+            = f.input :guest_names, label: 'Name(s) of guest(s)', required: false
           %fieldset
-            %input{:type => 'submit', :value => 'Send RSVP'}
-          %p 
-            For any questions, email us at 
+            = f.submit 'Send RSVP'
+          %p
+            For any questions, email us at
             = mail_to 'andrewr23@gmail.com'
 
       .sky-trees{"data-0" => "background-position:0px 0px;", "data-9000" => "background-position:-4000px 0px;", "data-9500" => 'top:0%;', "data-11200" => 'top:100%;'}
@@ -163,7 +161,7 @@
         .story-inner
           .paper
             .text
-              %p 
+              %p
                 %span L
                 orem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.
 
@@ -219,15 +217,15 @@
           = image_tag "/assets/firefly3.png"
 
         %h1 Hotel Information
-        %p 
-          For our out of town guests, or anyone who wants to stay near the venue before and/or after the wedding, we have special rates at the 
+        %p
+          For our out of town guests, or anyone who wants to stay near the venue before and/or after the wedding, we have special rates at the
           = link_to("Twelve Hotel in Atlantic Station", "http://www.twelvehotels.com", :target => '_blank') << '.'
           The hotel is located only 4 minutes from Summerour Studio. To use the special rate at the Twelve, enter “SHAG” in the group code field when booking a room.
 
-        %p 
-          We also have rooms blocked off at the 
+        %p
+          We also have rooms blocked off at the
           = link_to 'Atlanta Marriott Suites Midtown', 'http://www.marriott.com/hotels/travel/atlms-atlanta-marriott-suites-midtown/', :target => '_blank'
-          , also located very close to the venue (only 7 minutes driving). You can make reservations using this 
+          , also located very close to the venue (only 7 minutes driving). You can make reservations using this
           = link_to 'link', 'http://www.marriott.com/hotels/travel/atlms-atlanta-marriott-suites-midtown/?toDate=6/16/13&groupCode=KAGKAGA&stop_mobi=yes&fromDate=6/13/13&app=resvlink', :target => '_blank'
           , or you can call Marriott Reservations at 800-228-9290 and ask for the Kagan Wedding Room Block.
 
@@ -236,7 +234,7 @@
       .canopy6{"data-10260" => "top:-100%;", "data-12100" => "top: 100%;"}
       .canopy5{"data-10400" => "top:-100%;", "data-11800" => "top: 100%;"}
       .canopy4{"data-10440" => "top:-100%;", "data-11550" => "top: 100%;"}
-  
+
   :javascript
     var s = skrollr.init();
 

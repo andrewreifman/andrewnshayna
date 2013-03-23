@@ -1,0 +1,28 @@
+%h1 Guests
+
+%p
+  RSVP'ed guests:
+  = @guests.count
+
+%p
+  Total number of guests attending:
+  = @total_guests
+
+%table
+  %thead
+    %th #
+    %th Attending
+    %th Number of Guests
+    %th Names of Guests
+
+  %tbody
+    - @guests.each_with_index do |guest, index|
+      %tr
+        %td= index + 1
+        %td
+          - if guest.attending
+            = 'Yes'
+          - else
+            = 'No'
+        %td= guest.guests
+        %td= guest.guest_names
