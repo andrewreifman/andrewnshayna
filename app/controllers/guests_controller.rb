@@ -16,4 +16,10 @@ class GuestsController < ApplicationController
       render 'create_failure'
     end
   end
+
+  def destroy
+    guest = Guest.find(params[:id])
+    guest.destroy
+    redirect_to guests_path
+  end
 end
