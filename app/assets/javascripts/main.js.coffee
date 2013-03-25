@@ -1,3 +1,12 @@
+window.setup_guest_form = ->
+  $("input[name='guest[attending]']").click ->
+    if $("input[name='guest[attending]']:checked").val() == 'false'
+      $('#guest_guests').addClass("disabled")
+      $('#guest_guests').val(0)
+    else
+      $('#guest_guests').removeClass("disabled")
+      $('#guest_guests').val('')
+
 $ ->
 
   $(window).load ->
@@ -119,4 +128,4 @@ $ ->
   fireflyChandeliers 9, 40, 50, 85, 5000
   fireflyChandeliers 10, 38.5, 50, 12  , 3500
   fireflyChandeliers 11, 38.5, 50, -114, 4000
-  fireflyChandeliers 12, 40, 50, -185, 5000 
+  fireflyChandeliers 12, 40, 50, -185, 5000

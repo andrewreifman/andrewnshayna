@@ -1,3 +1,18 @@
+!!!
+/[if lt IE 7]
+  <html class="no-js lt-ie7" lang="en">
+/[if IE 7]
+  <html class="no-js lt-ie8 lt-ie7" lang="en">
+/[if IE 8]
+  <html class="no-js lt-ie9" lang="en">
+/[if gte IE 9]
+  %html.no-js{:lang => "en"}
+%head
+  = javascript_include_tag "application"
+  %script{:src => "//use.typekit.net/uri1xds.js", :type => "text/javascript"}
+  = csrf_meta_tags
+  = favicon_link_tag
+
 %h1 Guests
 
 %p
@@ -14,6 +29,7 @@
     %th Attending
     %th Number of Guests
     %th Names of Guests
+    %th
 
   %tbody
     - @guests.each_with_index do |guest, index|
@@ -26,3 +42,4 @@
             = 'No'
         %td= guest.guests
         %td= guest.guest_names
+        %td= link_to 'Delete', guest_path(guest.id), method: :delete, data: { confirm: 'Are you sure?' }
