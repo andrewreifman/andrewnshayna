@@ -3,6 +3,6 @@ class ApplicationController < ActionController::Base
   before_filter :setup_guests
 
   def setup_guests
-    @guest = Guest.new
+    @guest = Guest.new(attending: true)
   end
 end
