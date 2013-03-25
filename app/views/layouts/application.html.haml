@@ -50,24 +50,7 @@
         = link_to image_tag("/assets/crateandbarrel.png"), 'http://www.crateandbarrel.com/Gift-Registry/Shayna-Kagan-and-Andrew-Reifman/r4945559', :target => '_blank'
 
       .rsvp{"data-14600" => "top:-100%;", "data-15400" => "top: 9%;"}
-        %h1 Please RSVP whether or not you are attending
-        = simple_form_for Guest.new, remote: true do |f|
-          %fieldset.radio
-            %label{:for => 'guest_attending_true'}
-              %input{:type => 'radio', :id => 'guest_attending_true', :name => 'guest[attending]', :checked => 'checked'}
-              %span YES, see you at the party!
-            %label{:for => 'guest_attending_false'}
-              %input{:type => 'radio', :id => 'guest_attending_false', :name => 'guest[attending]'}
-              %span NO, we will be there in spirit
-          %fieldset
-            = f.input :guests, label: 'Number of guests attending', as: :string, required: false
-          %fieldset
-            = f.input :guest_names, label: 'Name(s) of guest(s)', required: false
-          %fieldset
-            = f.submit 'Send RSVP'
-          %p
-            For any questions, email us at
-            = mail_to 'andrewr23@gmail.com'
+        = render partial: 'rsvp'
 
       .sky-trees{"data-0" => "background-position:0px 0px;", "data-9000" => "background-position:-4000px 0px;", "data-9500" => 'top:0%;', "data-11200" => 'top:100%;'}
       .trees-midground{"data-0" => "background-position:0px 0px;", "data-9000" => "background-position:-5000px 0px", "data-9500" => 'top:0%;', "data-11200" => 'top:100%;'}

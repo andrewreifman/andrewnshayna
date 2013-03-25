@@ -1,0 +1,18 @@
+%h1 Please RSVP whether or not you are attending
+= simple_form_for @guest, remote: true do |f|
+  %fieldset.radio
+    = label_tag :guest_attending_true do
+      = radio_button_tag 'guest[attending]', true, true
+      %span YES, see you at the party!
+    = label_tag :guest_attending_false do
+      = radio_button_tag 'guest[attending]', false
+      %span NO, we will be there in spirit
+  %fieldset
+    = f.input :guests, label: 'Number of guests attending', as: :string, required: false
+  %fieldset
+    = f.input :guest_names, label: 'Name(s) of guest(s)', required: false
+  %fieldset
+    = f.submit 'Send RSVP'
+  %p
+    For any questions, email us at
+    = mail_to 'andrewr23@gmail.com'
