@@ -7,9 +7,9 @@
     = label_tag :guest_attending_false do
       = radio_button_tag 'guest[attending]', false, !@guest.attending?
       %span NO, we will be there in spirit
-  %fieldset
+  %fieldset.guest-number
     = f.input :guests, label: 'Number of guests attending', as: :string, required: false
-  %fieldset
+  %fieldset.guest-names
     = f.input :guest_names, label: 'Name(s) of guest(s)', required: false
   %fieldset
     = f.submit 'Send RSVP'

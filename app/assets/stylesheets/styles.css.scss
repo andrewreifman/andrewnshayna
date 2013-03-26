@@ -401,6 +401,10 @@ nav {
     text-shadow: 0 0 10px #97a7ca;
     margin: 0 auto 40px;
     width: 530px;
+
+    &.thanks {
+      margin: 170px auto 250px;
+    }
   }
 
   form {
@@ -414,6 +418,16 @@ nav {
       margin: 0 0 20px;
       padding: 0;
       text-align: left;
+      position: relative;
+      -webkit-transition: opacity .4s;
+         -moz-transition: opacity .4s;
+              transition: opacity .4s;
+
+      &.disabled {
+        opacity: .3;
+        -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+        pointer-events: none;
+      }
 
       label {
         display: block;
@@ -460,6 +474,15 @@ nav {
           color: #202c46;
           box-shadow: 0 0 10px rgba(255,255,255,.7);
         }
+      }
+
+      span.error {
+        position: absolute;
+        left: 512px;
+        top: 38px;
+        font-style: italic;
+        width: 100%;
+        font-size: 14px;
       }
 
       &.radio {

@@ -1,5 +1,5 @@
 class GuestsController < ApplicationController
-  http_basic_authenticate_with name: "andrew", password: "bodyboss85"
+  http_basic_authenticate_with name: "andrew", password: "bodyboss85", except: :create
 
   def index
     @attending_guests = Guest.where(attending: true)

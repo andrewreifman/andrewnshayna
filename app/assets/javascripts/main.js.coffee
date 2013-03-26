@@ -1,10 +1,10 @@
 window.setup_guest_form = ->
   $("input[name='guest[attending]']").click ->
     if $("input[name='guest[attending]']:checked").val() == 'false'
-      $('#guest_guests').addClass("disabled")
+      $('.guest-number').addClass("disabled")
       $('#guest_guests').val(0)
     else
-      $('#guest_guests').removeClass("disabled")
+      $('.guest-number').removeClass("disabled")
       $('#guest_guests').val('')
 
 $ ->
