@@ -23,6 +23,11 @@ group :test do
   gem 'simplecov'
 end
 
+group :production do
+  gem 'newrelic_rpm'
+  gem 'thin'
+end
+
 #IE CSS Compliance
 gem 'pie-rails'
 
