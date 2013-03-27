@@ -1,4 +1,7 @@
 window.setup_guest_form = ->
+  if $("input[name='guest[attending]']:checked").val() == 'false'
+    $('.guest-number').addClass("disabled")
+
   $("input[name='guest[attending]']").click ->
     if $("input[name='guest[attending]']:checked").val() == 'false'
       $('.guest-number').addClass("disabled")
