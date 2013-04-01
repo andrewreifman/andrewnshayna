@@ -20,7 +20,7 @@ $ ->
       , 1000
 
       fireflyArrow = (index, topPos, rightPos, duration) ->
-        $(".arrow .firefly-" + index).delay(1800).animate
+        $(".arrow .firefly-" + index).delay(1500).animate
           top: topPos + '%'
           right: rightPos + '%'
         , duration
