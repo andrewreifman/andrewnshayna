@@ -67,7 +67,7 @@ $ ->
     $('html,body').animate({scrollTop: 9000}, 2600)
     return false
   $('.nav-hotels').click ->
-    $('html,body').animate({scrollTop: 10820}, 2600)
+    $('html,body').animate({scrollTop: 10720}, 2600)
     return false
   $('.nav-gifts').click ->
     $('html,body').animate({scrollTop: 13380}, 2600)
