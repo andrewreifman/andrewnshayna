@@ -27,16 +27,21 @@ body {
 .wrapper {
   width: 100%;
   min-width: 1024px;
-  height: 670px;
+  height: 660px;
+  padding-top: 60px;
   position: fixed;
   top: 50%;
-  margin: -370px 0 0 0;
+  margin: -360px 0 0 0;
 }
 
 nav {
-  height: 70px;
+  height: 60px;
   text-align: center;
-  padding-top: 22px;
+  padding-top: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   overflow: hidden;
 
   a {
@@ -522,11 +527,28 @@ nav {
   }
 }
 
-
-@media only screen and (max-height: 720px) {
-  .wrapper { margin-top: -330px; }
+@media only screen and (max-height: 730px) {
+  .wrapper { 
+    margin-top: 0; 
+    top: 0;
+  }
   nav {
-    height: 60px; 
+    padding-top: 20px;
+
+    a {font-size: 24px;}
+  }
+}
+
+@media only screen and (max-height: 660px) {
+  .wrapper { 
+    margin-top: 0; 
+    top: 0;
+    height: 100%;
+  }
+  .frame {
+    height: 100%;
+  }
+  nav {
     padding-top: 20px;
 
     a {font-size: 24px;}
