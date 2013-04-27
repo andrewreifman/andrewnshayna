@@ -540,17 +540,10 @@ nav {
 }
 
 @media only screen and (max-height: 660px) {
-  .wrapper { 
-    margin-top: 0; 
-    top: 0;
+  .wrapper {
     height: 100%;
   }
   .frame {
     height: 100%;
-  }
-  nav {
-    padding-top: 20px;
-
-    a {font-size: 24px;}
   }
 }
